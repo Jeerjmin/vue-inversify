@@ -6,7 +6,7 @@ import VueI18n from 'vue-i18n';
 import ElementLocale from 'element-ui/lib/locale';
 import VueRouter from 'vue-router';
 import VueProgressBar from 'vue-progressbar';
-import { bootstrapContainer, loadAsyncModules } from '@/app.container';
+import { bootstrapContainer } from '@/app.container';
 import App from './app.vue';
 import './registerServiceWorker';
 import initRouter from './router';
@@ -21,7 +21,6 @@ class AppBootstrap {
 
     private async loadDependencyContainer() {
         bootstrapContainer();
-        await loadAsyncModules();
     }
 
     private configApp(): void {

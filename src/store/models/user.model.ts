@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 
 export default class UserModel {
     @Expose()
-    @Transform((_, plain) => plain.fornova_user_id)
+    @Transform((_, plain) => plain.user_id)
     id!: number;
 
     @Expose()

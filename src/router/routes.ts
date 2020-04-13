@@ -17,7 +17,7 @@ export default function initRoutes() {
             children: [
                 {
                     path: '',
-                    redirect: 'home',
+                    component: () => import('@/pages/home.page.vue'),
                 },
                 {
                     path: '*',

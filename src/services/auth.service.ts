@@ -50,6 +50,6 @@ export default class AuthService {
     }
 
     get loginUrl() {
-        return this.configService.ssoUrl + encodeURI(`?appName=FornovaCI&redirectUrl=${window.location.origin}/auth`);
+        return this.configService.ssoUrl + encodeURI(`?appName=Vue-inversify&redirectUrl=${window.location.origin}/auth`);
     }
 }

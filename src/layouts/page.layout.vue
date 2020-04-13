@@ -1,8 +1,6 @@
 <template>
     <div class="layout">
-        <Header />
         <div class="main">
-            <Sidebar />
             <div class="page">
                 <router-view />
             </div>
@@ -12,12 +10,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Header from '@/components/header.vue';
-import Sidebar from '@/components/sidebar.vue';
 
-@Component({
-    components: { Header, Sidebar },
-})
 export default class PageLayout extends Vue {
 }
 </script>

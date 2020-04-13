@@ -33,13 +33,3 @@ export function bootstrapContainer() {
     container.addSingleton(AuthStoreFacade, AuthStoreFacadeS);
     container.addSingleton(AuthService, AuthServiceS);
 }
-
-export async function loadAsyncModules() {
-    const configModule = new AsyncContainerModule(async () => {
-        const configService = container.get<ConfigService>(ConfigServiceS);
-        await configService.init();
-        container.rebind(ConfigServiceS).toConstantValue(configService);
-    });
-
-    await container.loadAsync(configModule);
-}
