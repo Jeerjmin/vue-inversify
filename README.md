@@ -1,4 +1,4 @@
-<h1>Vue inversify starter with services architecture</h1>
+<h1>Vue inversify typescript starter with services architecture</h1>
 
 ## Project setup
 ```
