@@ -1,0 +1,65 @@
+@import "./assets/fonts/style.css";
+@import "~reset-css/sass/reset";
+@import "buttons";
+
+$enable-rounded: true;
+
+#app {
+  font-family: 'Lato-Regular', sans-serif;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+// --- fonts for common element UI components(it won't be able changed in another way)
+
+.el-picker-panel {
+  font-family: Lato-Regular, sans-serif;
+}
+
+.el-select-dropdown {
+  font-family: Lato-Regular, sans-serif;
+
+  // select with icons styles
+  .el-select-dropdown__item {
+    display: flex;
+    img {
+      margin-right: 32px;
+    }
+  }
+}
+
+.el-dropdown-menu {
+  font-family: Lato-Regular, sans-serif;
+}
+

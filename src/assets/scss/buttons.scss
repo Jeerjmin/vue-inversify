@@ -1,0 +1,124 @@
+@import "variables";
+
+$button-border-radius: 5px;
+$button-font-size: 16px;
+$button-font-family: 'Lato-Regular', sans-serif;
+$button-padding: 8px;
+
+$icon-color: rgba(0, 26, 51, 0.6);
+
+$button-base-color: #555555;
+$button-base-bg: $white;
+
+$button-primary-bg: #2CACE2;
+$button-secondary-bg: $white;
+$button-transparent-bg: transparent;
+
+// --- mixins ------------------------------------------------------------------
+
+@mixin active-link() {
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  content: '';
+  width: 25px;
+  height: 2px;
+  background: #2CACE2;
+}
+
+@mixin button($name, $color, $background-color) {
+  .btn_#{$name} {
+    background-color: $background-color;
+    color: $color;
+
+    @include button-hover($background-color);
+
+    &.btn_bordered {
+      border: 1px solid $color;
+
+      color: $color;
+
+      &:hover {
+        background: $background-color;
+        color: darken($color, 10%);
+        border-color: darken($color, 10%);
+      }
+    }
+
+    &.btn_square {
+      min-width: 30px;
+      padding: 3px;
+      color :rgba(0, 26, 51, 0.6);
+      border-radius: 3px;
+      border: 1px solid #C4C4C4;
+
+      &:hover {
+        color: #001A33;
+      }
+
+      &.btn_link {
+        border: none;
+        &.btn_active {
+          color: #001A33;
+            &::after {
+              @include active-link()
+            }
+        }
+        &:hover {
+          text-decoration: none;
+
+          &::after {
+            @include active-link()
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin button-hover($bg) {
+  &:hover {
+    background-color: lighten($bg, 5%);
+  }
+}
+// --- button ------------------------------------------------------------------
+
+.btn {
+  color: $button-base-color;
+  background-color: $button-base-bg;
+  padding: $button-padding;
+  text-decoration: none;
+  border-radius: $button-border-radius;
+  font: $button-font-size $button-font-family;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+  min-width: 104px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include button-hover($button-base-bg);
+
+  &_link {
+    background-color: transparent;
+    min-width: 30px;
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+      color: $button-primary-bg;
+    }
+  }
+
+  &.is-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+// --- button: variants --------------------------------------------------------
+@include button('base', $button-base-color, $white);
+@include button('primary', $white, $button-primary-bg);
+@include button('secondary', $button-base-color, $button-secondary-bg);
+@include button('transparent', $button-primary-bg, $button-transparent-bg);
