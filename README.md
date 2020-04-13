@@ -1,4 +1,4 @@
-# ci-frontend
+Vue inversify starter with services architecture
 
 ## Project setup
 ```
