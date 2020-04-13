@@ -1,4 +1,4 @@
-Vue inversify starter with services architecture
+<h1>Vue inversify starter with services architecture</h1>
 
 ## Project setup
 ```
