@@ -13,7 +13,7 @@
     "dependencies": {
         "@types/lodash": "^4.14.149",
         "async-mutex": "^0.1.4",
-        "axios": "^0.19.1",
+        "axios": "^0.21.1",
         "class-transformer": "^0.2.3",
         "core-js": "^3.4.4",
         "deep-map-keys": "^2.0.1",
